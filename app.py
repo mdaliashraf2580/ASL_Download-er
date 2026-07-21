@@ -1,4 +1,5 @@
-from flask import Flask, render_template, request, send_file
+from flask import Flask, render_template, request
+from downloader import download_media
 import os
 
 app = Flask(__name__)
@@ -19,11 +20,14 @@ def download():
     url = request.form.get("url")
 
     if not url:
-        return "No URL provided"
+        return "Please provide a URL"
 
-    # Downloader logic will be added here
+    result = download_media(url)
 
-    return f"Download request received: {url}"
+    if result:
+        return "Download completed successfully!"
+
+    return "Download failed!"
 
 
 if __name__ == "__main__":
