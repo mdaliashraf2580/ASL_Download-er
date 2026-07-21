@@ -28,6 +28,7 @@ ASL_Download'er aims to provide a lightweight, efficient and easy-to-use downloa
 ---
 
 ## 📂 Project Structure
+
 ASL_Downloader/
 │
 ├── app.py
